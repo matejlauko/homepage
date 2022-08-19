@@ -3,22 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3080",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "duotone": "duotone serve",
+    "typecheck": "tsc"
   },
   "dependencies": {
+    "contentlayer": "^0.2.7",
     "next": "12.2.4",
+    "next-contentlayer": "^0.2.7",
+    "next-themes": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@lauko/eslint-config": "file:../../lauko/packages/eslint-config",
+    "@lauko/prettier-config": "file:../../lauko/packages/prettier-config",
+    "@lauko/typings": "file:../../lauko/packages/typings",
     "@types/node": "18.6.5",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
+    "prettier": "^2.7.1",
     "typescript": "4.7.4"
-  }
+  },
+  "prettier": "@lauko/prettier-config"
 }
