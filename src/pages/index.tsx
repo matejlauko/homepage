@@ -2,12 +2,13 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { allPosts, allThoughts, Post, Thought } from 'contentlayer/generated'
 import NextLink from 'next/link'
-import { Container, Link, List, ListItem, styled } from '@lauko/ui'
+import { Container, Link, List, ListItem, styled } from '@matejlauko/ui'
 import Top from '../components/top'
 import Projects from '../components/projects'
 import Posts from '../components/posts'
 import Footer from '../components/footer'
 import Header from '../components/header'
+import { Seo } from '../components/seo'
 
 type Props = {
   posts: Post[]
@@ -17,9 +18,7 @@ type Props = {
 const Home: NextPage<Props> = ({ posts, thoughts }) => {
   return (
     <>
-      <Head>
-        <title>Matej Lauko</title>
-      </Head>
+      <Seo />
 
       <Header />
 

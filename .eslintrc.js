@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@lauko/eslint-config/nextjs'],
+  extends: ['@matejlauko/eslint-config/nextjs'],
 }

@@ -1,10 +1,10 @@
-import { Center, Heading, styled, Text } from '@lauko/ui';
-import * as React from 'react';
-import { Post } from '../../.contentlayer/generated';
+import { Center, Heading, styled, Text, linkVariants, linkStyles } from '@matejlauko/ui'
+import * as React from 'react'
+import { Post } from '../../.contentlayer/generated'
 
 type Props = {
-  article: Post;
-};
+  article: Post
+}
 
 const Article: React.FC<Props> = ({ article }) => {
   return (
@@ -21,15 +21,19 @@ const Article: React.FC<Props> = ({ article }) => {
 
       <UIBody dangerouslySetInnerHTML={{ __html: article.body.html }} />
     </UIArticle>
-  );
-};
+  )
+}
 
-export default Article;
+export default Article
 
-const UIArticle = styled('article', {});
+const UIArticle = styled('article', {})
 
 const UIBody = styled('div', {
-  my: 'clamp($space$8, 5vh, $space$16)',
+  my: '$8',
+
+  '@md': {
+    my: '$12',
+  },
 
   maxWidth: '65ch',
   mx: 'auto',
@@ -57,4 +61,9 @@ const UIBody = styled('div', {
     marginBottom: '1.3333333em',
     lineHeight: 1.7777778,
   },
-});
+
+  '& a': {
+    ...linkStyles,
+    ...linkVariants.tone.accent,
+  },
+})

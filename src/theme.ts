@@ -5,7 +5,7 @@ import {
   baseDarkColors,
   darkColors,
   createBaseTokens,
-} from '@lauko/tokens'
+} from '@matejlauko/tokens'
 const {
   mauveDark,
   mauveDarkA,
@@ -22,25 +22,26 @@ const base = createBaseTokens({
     body: '"Inter", system-ui, sans-serif',
   },
   fontSizes: {
-    0: '11px',
-    1: '12px',
-    2: '13px',
-    3: '14px',
-    4: '15px',
-    5: '16px',
-    6: '18px',
-    7: '20px',
-    8: '24px',
-    9: '28px',
-    10: '32px',
+    0: '0.6875rem',
+    1: '0.75rem',
+    2: '0.8125rem',
+    3: '0.875rem',
+    4: '0.9375rem',
+    5: '1rem',
+    6: '1.125rem',
+    7: '1.25rem',
+    8: '1.5rem',
+    9: '1.75rem',
+    10: '2rem',
 
-    base: '$fontSizes$3',
+    base: '100%',
   },
   lineHeights: {
     xs: 1.1,
     sm: 1.2,
     md: 1.5,
     lg: 1.7,
+    xl: 1.86,
     body: 1.5,
   },
   fontWeights: {

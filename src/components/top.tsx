@@ -1,39 +1,52 @@
 import {
-  Center,
   EnvelopeClosedIcon,
   GitHubLogoIcon,
   Heading,
   HStack,
-  IconButton,
+  Link,
   LinkedInIcon,
+  LinkIconButton,
   Paragraph,
   Tooltip,
   TwitterIcon,
-} from '@lauko/ui'
+} from '@matejlauko/ui'
+import NextImage from 'next/image'
 import * as React from 'react'
+import aroundFavicon from '../assets/around-favicon.png'
+import { styled } from '../ui'
 
-const Top: React.FC = () => {
+const Top = () => {
   return (
     <>
       <Heading
         as="h2"
-        size="lg"
+        size="xl"
         weight="normal"
-        css={{ lineHeight: '$lg', mb: '$2', maxWidth: '50ch' }}
+        css={{ lineHeight: '$lg', mb: '$6', maxWidth: '50ch' }}
       >
-        Obsessed with bringing more web products with beautiful and&nbsp;intuitive user interfaces
-        to&nbsp;people.
+        I&apos;m a UI/UX engineer, on a mission to bring web products with beautiful
+        and&nbsp;intuitive user interfaces to&nbsp;people.
       </Heading>
 
-      <Paragraph size="lg" css={{ maxWidth: '60ch' }}>
-        Working on&nbsp;Around frontend and&nbsp;design-system by day.
+      <Paragraph size="lg" css={{ lineHeight: '$xl', maxWidth: '60ch' }}>
+        Currently working on&nbsp;
+        <Link
+          href="https://around.co"
+          tone="neutral"
+          css={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'bottom' }}
+        >
+          <NextImage src={aroundFavicon} width="24px" height="24px" alt="Around.co logo" />
+          &nbsp;Around
+        </Link>
+        &apos;s frontend and&nbsp;design-system,
         <br />
-        Building tools that make it smooth to&nbsp;craft &nbsp;best product experiences
-        by&nbsp;night.
+        building tools that make crafting the best product experiences smoother
+        <br />
+        and writing about making web apps, sites and good UX.
       </Paragraph>
 
       <HStack css={{ mt: '$10' }}>
-        <Tooltip content="@matejlauko">
+        <Tooltip content="Twitter: @matejlauko">
           <SocialLink
             as="a"
             href="https://twitter.com/matejlauko"
@@ -45,7 +58,7 @@ const Top: React.FC = () => {
           </SocialLink>
         </Tooltip>
 
-        <Tooltip content="github.com/matejlauko">
+        <Tooltip content="GitHub: matejlauko">
           <SocialLink
             as="a"
             href="https://github.com/matejlauko"
@@ -57,7 +70,7 @@ const Top: React.FC = () => {
           </SocialLink>
         </Tooltip>
 
-        <Tooltip content="linkedin.com/in/matej-lauko">
+        <Tooltip content="Linkedin: matej-lauko">
           <SocialLink
             as="a"
             href="https://www.linkedin.com/in/matej-lauko/"
@@ -69,7 +82,7 @@ const Top: React.FC = () => {
           </SocialLink>
         </Tooltip>
 
-        <Tooltip content="matej@lauko.io">
+        <Tooltip content="Email: matej@lauko.io">
           <SocialLink
             as="a"
             href="mailto:matej@lauko.io"
@@ -88,8 +101,23 @@ const Top: React.FC = () => {
 export default Top
 
 const SocialLink = React.forwardRef<
-  React.ElementRef<typeof IconButton>,
-  React.ComponentProps<typeof IconButton> & { href: HTMLAnchorElement['href'] }
+  React.ElementRef<typeof LinkIconButton>,
+  React.ComponentProps<typeof LinkIconButton> & { href: HTMLAnchorElement['href'] }
 >(function SocialLink(props, forwardedRef) {
-  return <IconButton as="a" size="lg" variant="tertiary" {...props} ref={forwardedRef} />
+  return (
+    <LinkIconButton
+      as="a"
+      size="lg"
+      variant="tertiary"
+      target="_blank"
+      {...props}
+      ref={forwardedRef}
+    />
+  )
+})
+
+const UIInlineImage = styled('span', {
+  display: 'inline-flex',
+  verticalAlign: 'middle',
+  ml: '$1',
 })

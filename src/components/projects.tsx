@@ -1,23 +1,20 @@
 import {
+  Badge,
+  BadgeProps,
   Center,
   Heading,
   HStack,
-  styled,
   MixIcon,
-  Panel,
-  Box,
-  Paragraph,
-  VStack,
-  Badge,
+  styled,
   Text,
-  BadgeProps,
-} from '@lauko/ui'
-import * as React from 'react'
+  VStack,
+} from '@matejlauko/ui'
 import NextImage from 'next/image'
+import * as React from 'react'
+import duotoneLogo from '../assets/duotone-logo.svg'
+import ideabaseLogo from '../assets/ideabase-logo.svg'
 
-type Props = {}
-
-const Projects: React.FC<Props> = ({}) => {
+const Projects = () => {
   return (
     <>
       <Center css={{ mb: '$12' }}>
@@ -34,7 +31,7 @@ const Projects: React.FC<Props> = ({}) => {
         <Project
           title="duotone"
           description="Theme editor for design system components"
-          logo="/duotone-logo.svg"
+          logo={duotoneLogo}
           tags={[
             { label: 'dev tool', color: 'blue' },
             { label: 'oss', color: 'crimson' },
@@ -43,8 +40,8 @@ const Projects: React.FC<Props> = ({}) => {
         <Project
           title="Ideabase"
           description="Personal space for all your ideas"
-          logo="/ideabase-logo.svg"
-          tags={[{ label: 'tool for thought', color: 'yellow' }]}
+          logo={ideabaseLogo}
+          tags={[{ label: 'knowledge', color: 'yellow' }]}
         />
         <Project
           title="React UI kits repo"
@@ -62,8 +59,8 @@ const Projects: React.FC<Props> = ({}) => {
 export default Projects
 
 const UIWrap = styled('div', {
-  'display': 'grid',
-  'gap': '$6',
+  display: 'grid',
+  gap: '$6',
 
   '@md': {
     gridTemplateColumns: '1fr 1fr',
@@ -80,12 +77,12 @@ type ProjectProps = {
 const Project: React.FC<ProjectProps> = ({ title, description, logo, tags }) => {
   return (
     <UIProject>
-      <UILogo empty={!logo}>{logo && <NextImage src={logo} width="64px" height="64px" />}</UILogo>
+      <UILogo empty={!logo}>
+        {logo && <NextImage src={logo} width="64px" height="64px" alt={`${title} logo`} />}
+      </UILogo>
 
       <UITexts>
-        <Heading as="h3" size="md">
-          {title}
-        </Heading>
+        <Heading as="h3">{title}</Heading>
 
         <Text
           size="sm"
@@ -107,7 +104,7 @@ const Project: React.FC<ProjectProps> = ({ title, description, logo, tags }) => 
 
 const UIProject = styled('div', {
   display: 'flex',
-  p: '$2',
+  p: '$4',
   bg: '$uibg2',
   borderRadius: '$md',
   borderWidth: 1,
@@ -124,16 +121,16 @@ const UITexts = styled('div', {
 })
 
 const UILogo = styled('div', {
-  'flexShrink': 0,
-  'overflow': 'hidden',
-  'borderRadius': '$lg',
-  'size': '64px',
+  flexShrink: 0,
+  overflow: 'hidden',
+  borderRadius: '$lg',
+  size: '64px',
 
   '& > *': {
     display: 'block !important',
   },
 
-  'variants': {
+  variants: {
     empty: {
       true: {
         bg: '$uibg6',

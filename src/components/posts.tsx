@@ -9,7 +9,7 @@ import {
   Text,
   TextIcon,
   VStack,
-} from '@lauko/ui'
+} from '@matejlauko/ui'
 import NextLink from 'next/link'
 import * as React from 'react'
 import { Post } from '../../.contentlayer/generated'
@@ -19,8 +19,6 @@ type Props = {
 }
 
 const Posts: React.FC<Props> = ({ posts }) => {
-  // console.log({ posts });
-
   return (
     <>
       <Center css={{ mb: '$12' }}>
@@ -33,7 +31,7 @@ const Posts: React.FC<Props> = ({ posts }) => {
         </HStack>
       </Center>
 
-      <VStack gap="lg">
+      <VStack gap="xl">
         {posts.map((post) => (
           <Post post={post} key={post._id} />
         ))}
@@ -51,15 +49,15 @@ type PostProps = {
 const Post: React.FC<PostProps> = ({ post }) => {
   return (
     <UIPost as={LinkBox}>
-      <NextLink href={`/post/${post.slug}`} passHref={true}>
+      <NextLink href={`/posts/${post.slug}`} passHref={true}>
         <LinkOverlay>
-          <Heading as="h3" color="text" size="md">
+          <Heading as="h3" color="text">
             {post.title}
           </Heading>
         </LinkOverlay>
       </NextLink>
 
-      <Paragraph color="muted" readable={true} css={{ my: 0 }}>
+      <Paragraph color="muted" readable={true} css={{ my: 0 }} size="sm">
         {post.perex}
       </Paragraph>
 
@@ -71,10 +69,10 @@ const Post: React.FC<PostProps> = ({ post }) => {
 }
 
 const UIPost = styled('article', {
-  'display': 'grid',
-  'rowGap': '$1_5',
-  'columnGap': '$6',
-  'gridAutoFlow': 'row',
+  display: 'grid',
+  rowGap: '$1_5',
+  columnGap: '$6',
+  gridAutoFlow: 'row',
 
   '@md': {
     gridTemplateColumns: '1fr max-content',

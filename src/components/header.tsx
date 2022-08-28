@@ -1,11 +1,10 @@
-import { Container, Heading, HStack, styled } from '@lauko/ui'
+import { Container, Heading, HStack, styled } from '@matejlauko/ui'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 import * as React from 'react'
+import profilePic from '../assets/profile-pic.jpg'
 
-type Props = {}
-
-const Header: React.FC<Props> = ({}) => {
+const Header = () => {
   return (
     <header>
       <Container>
@@ -13,7 +12,12 @@ const Header: React.FC<Props> = ({}) => {
           <NextLink href="/" passHref={true}>
             <HStack as="a">
               <UIProfile>
-                <NextImage src="/profile-pic.jpg" width="36px" height="36px" />
+                <NextImage
+                  src={profilePic}
+                  width="36px"
+                  height="36px"
+                  alt="Matej Lauko profile photo"
+                />
               </UIProfile>
 
               <Heading as="h1" size="md" css={{ '@md': { fontSize: '$6' } }}>

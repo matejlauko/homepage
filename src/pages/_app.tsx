@@ -1,4 +1,4 @@
-import { createUI, theme, UIProvider } from '@lauko/ui'
+import { createUI, theme, UIProvider } from '@matejlauko/ui'
 import { tokens } from '../theme'
 
 createUI(tokens)

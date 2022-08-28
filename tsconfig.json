@@ -1,5 +1,5 @@
 {
-  "extends": "@lauko/typings/nextjs.json",
+  "extends": "@matejlauko/typings/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
