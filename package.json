@@ -16,6 +16,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@duotone/react": "^0.0.2",
     "@matejlauko/tokens": "^0.1.0",
     "@matejlauko/ui": "^0.1.3",
     "@matejlauko/utils": "^0.1.0",
