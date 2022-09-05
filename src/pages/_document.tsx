@@ -60,6 +60,8 @@ function Document() {
       <body>
         <Main />
         <NextScript />
+
+        <script async data-no-cookie data-respect-dnt data-api="/_hive" src="/bee.js"></script>
       </body>
     </Html>
   )
