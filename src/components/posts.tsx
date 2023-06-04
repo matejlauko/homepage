@@ -1,4 +1,5 @@
 import {
+  Box,
   Center,
   Heading,
   HStack,
@@ -21,15 +22,11 @@ type Props = {
 const Posts: React.FC<Props> = ({ posts }) => {
   return (
     <>
-      <Center css={{ mb: '$12' }}>
-        <HStack>
-          <TextIcon color="accent" size="lg" />
-
-          <Heading as="h2" caps={true} css={{ lineHeight: 1 }}>
-            Posts
-          </Heading>
-        </HStack>
-      </Center>
+      <Box css={{ mb: '$12' }}>
+        <Heading as="h2" caps={true} css={{ lineHeight: 1 }}>
+          Posts
+        </Heading>
+      </Box>
 
       <VStack gap="xl">
         {posts.map((post) => (
@@ -49,7 +46,7 @@ type PostProps = {
 const Post: React.FC<PostProps> = ({ post }) => {
   return (
     <UIPost as={LinkBox}>
-      <NextLink href={`/posts/${post.slug}`} passHref={true}>
+      <NextLink href={`/posts/${post.slug}`} passHref={true} legacyBehavior scroll={true}>
         <LinkOverlay>
           <Heading as="h3" color="text">
             {post.title}

@@ -6,12 +6,10 @@ type Props = {
   title?: string
 }
 
-const URL = process.env.NEXT_PUBLIC_URL || process.env.URL || process.env.VERCEL_URL
-
 export const Seo: React.FC<Props> = ({ title }) => {
   const router = useRouter()
 
-  const _url = `${URL}${router.asPath}`
+  const _url = `${process.env.NEXT_PUBLIC_URL}${router.asPath}`
   const _title = title ? `${title} | Matej Lauko` : 'Matej Lauko'
   const _description =
     'UI/UX engineer, on a mission to bring web products with beautiful and intuitive user interfaces to people.'

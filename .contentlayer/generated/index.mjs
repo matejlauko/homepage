@@ -10,3 +10,5 @@ import { allThoughts } from './Thought/_index.mjs'
 export { allPosts, allThoughts }
 
 export const allDocuments = [...allPosts, ...allThoughts]
+
+

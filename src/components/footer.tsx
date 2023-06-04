@@ -7,7 +7,7 @@ const Footer = () => {
       <Container>
         <Center text={true}>
           <Text color="muted2" size="sm">
-            Crafted in Prague, 2022
+            2023
           </Text>
         </Center>
       </Container>

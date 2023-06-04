@@ -9,13 +9,13 @@ const Header = () => {
     <header>
       <Container>
         <UIHeader>
-          <NextLink href="/" passHref={true}>
+          <NextLink href="/" passHref={true} legacyBehavior>
             <HStack as="a">
               <UIProfile>
                 <NextImage
                   src={profilePic}
-                  width="36px"
-                  height="36px"
+                  width={36}
+                  height={36}
                   alt="Matej Lauko profile photo"
                 />
               </UIProfile>

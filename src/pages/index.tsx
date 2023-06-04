@@ -24,9 +24,9 @@ const Home: NextPage<Props> = ({ posts, thoughts }) => {
         <Container>
           <Top />
 
-          <UISection>
+          {/* <UISection>
             <Projects />
-          </UISection>
+          </UISection> */}
 
           <UISection>
             <Posts posts={posts} />
@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const UIMain = styled('main', {
-  my: 'clamp($space$4, 2vh, $space$12)',
+  my: '$8',
 })
 
 const UISection = styled('section', {

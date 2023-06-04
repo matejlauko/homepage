@@ -18,7 +18,10 @@ import { styled } from '../ui'
 const Top = () => {
   return (
     <>
-      <Heading
+      <Paragraph size="xl3" css={{ lineHeight: '$xl', maxWidth: '60ch', fontWeight: '$light' }}>
+        Engineering, Product, UX
+      </Paragraph>
+      {/* <Heading
         as="h2"
         size="xl"
         weight="normal"
@@ -35,7 +38,7 @@ const Top = () => {
           tone="neutral"
           css={{ display: 'inline-flex', alignItems: 'center', verticalAlign: 'bottom' }}
         >
-          <NextImage src={aroundFavicon} width="24px" height="24px" alt="Around.co logo" />
+          <NextImage src={aroundFavicon} width={24} height={24} alt="Around.co logo" />
           &nbsp;Around
         </Link>
         &apos;s frontend and&nbsp;design-system,
@@ -43,9 +46,9 @@ const Top = () => {
         building tools that make crafting the best product experiences smoother
         <br />
         and writing about making web apps, sites and good UX.
-      </Paragraph>
+      </Paragraph> */}
 
-      <HStack css={{ mt: '$10' }}>
+      <HStack css={{ mt: '$20' }}>
         <Tooltip content="Twitter: @matejlauko">
           <SocialLink
             as="a"

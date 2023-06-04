@@ -78,7 +78,7 @@ const Project: React.FC<ProjectProps> = ({ title, description, logo, tags }) => 
   return (
     <UIProject>
       <UILogo empty={!logo}>
-        {logo && <NextImage src={logo} width="64px" height="64px" alt={`${title} logo`} />}
+        {logo && <NextImage src={logo} width={64} height={64} alt={`${title} logo`} />}
       </UILogo>
 
       <UITexts>

@@ -45,6 +45,6 @@ export const getStaticProps: GetStaticProps<Partial<Props>> = ({ params }) => {
 }
 
 const UIMain = styled('main', {
-  mt: 'clamp($space$4, 3vh, $space$16)',
+  mt: '$16',
   mb: 'clamp($space$16, 10vh, $space$28)',
 })

@@ -10,7 +10,7 @@ const Article: React.FC<Props> = ({ article }) => {
   return (
     <UIArticle>
       <Center text={true}>
-        <Heading as="h1" size="xl3" css={{ mb: '$1' }}>
+        <Heading as="h1" css={{ mb: '$1', fontSize: '2em' }}>
           {article.title}
         </Heading>
 

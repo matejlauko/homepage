@@ -1,6 +1,6 @@
 ---
-title: 'Get the perfect UX faster by prototyping in code'
-date: '2020-08-28'
+title: 'Prototyping in code'
+date: '2022-08-28'
 ---
 
 Most teams or makers will jump from design straight to production code when developing apps or new features.
