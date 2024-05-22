@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 30 5% 97%;
+  --fg: 0 0% 26%;
+}
+
+body {
+  @apply bg-bg text-fg;
+}
